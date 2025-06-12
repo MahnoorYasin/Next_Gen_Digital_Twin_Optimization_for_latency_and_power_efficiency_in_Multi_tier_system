@@ -20,26 +20,14 @@ The project proposes a dynamic framework combining reinforcement learning (RL) a
 ### 1. **Latency Reduction with Dijkstra's Algorithm**
    - **Purpose**: Minimize communication latency between users and servers.
    - **Implementation**: The network is modeled as a graph with weighted edges (latency). Dijkstra's algorithm computes the shortest path for efficient task routing.
-   - **Formula**:  
-     \[
-     P_{opt} = \arg \min_{P \in P} \sum_{e \in P} l(e)
-     \]
 
 ### 2. **Dynamic Resource Allocation with Q-Learning**
    - **Purpose**: Decentralized decision-making for optimal server selection.
    - **Implementation**: Q-Learning updates Q-values based on rewards (successful/failed allocations). The policy selects servers to maximize resource utilization.
-   - **Formula**:  
-     \[
-     Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \alpha \left[r_t + \gamma \max_{a_{t+1}} Q(s_{t+1}, a_{t+1}) - Q(s_t, a_t)\right]
-     \]
 
 ### 3. **Digital Twin Migration with Proximal Policy Optimization (PPO)**
    - **Purpose**: Optimize migration decisions to reduce latency.
    - **Implementation**: PPO trains a policy to migrate digital twins efficiently, using a clipped objective function for stability.
-   - **Formula**:  
-     \[
-     L^{CLIP}(\theta) = \mathbb{E}_t \left[\min \left(r_t(\theta) \hat{A}_t, \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t\right)\right]
-     \]
 
 ### 4. **Real-Time Synchronization with LSTM**
    - **Purpose**: Predict latency for real-time updates.
